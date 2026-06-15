@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Se Pehla Kadam — Free Guide by Upskillwithmumma</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rust:     #C0522A;
+    --rust-lt:  #E8845F;
+    --cream:    #FAF6F0;
+    --ink:      #1C1410;
+    --muted:    #7A6A60;
+    --warm-mid: #EDE3D8;
+    --white:    #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  .hero {
+    background: var(--ink);
+    padding: 56px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 0%, rgba(192,82,42,0.28) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rust-lt);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.18;
+    max-width: 640px;
+    margin: 0 auto 16px;
+  }
+  .hero h1 em { font-style: italic; color: var(--rust-lt); }
+  .hero-sub {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    color: #C8BEB8;
+    max-width: 520px;
+    margin: 0 auto 36px;
+    line-height: 1.65;
+  }
+  .scroll-cta {
+    display: inline-block;
+    background: var(--rust);
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .scroll-cta:hover { background: var(--rust-lt); }
+
+  .strip {
+    background: var(--rust);
+    color: var(--white);
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .inside {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 40px;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+  .inside h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    line-height: 1.25;
+    margin-bottom: 24px;
+  }
+  .inside p {
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+  .checklist {
+    list-style: none;
+    margin: 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .checklist li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 0.97rem;
+    line-height: 1.55;
+  }
+  .check-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: var(--rust);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .check-icon svg { width: 11px; height: 11px; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--warm-mid);
+    margin: 0 24px;
+  }
+
+  .forwho {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .forwho h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 4vw, 1.85rem);
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+  .pain-cards { display: flex; flex-direction: column; gap: 12px; }
+  .pain-card {
+    background: var(--white);
+    border-left: 3px solid var(--rust);
+    padding: 16px 20px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .pain-card strong { display: block; margin-bottom: 4px; font-weight: 600; }
+
+  .form-section {
+    background: var(--ink);
+    padding: 56px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 100%, rgba(192,82,42,0.22) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .form-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    color: var(--white);
+    max-width: 560px;
+    margin: 0 auto 12px;
+    line-height: 1.25;
+    position: relative;
+  }
+  .form-section h2 em { font-style: italic; color: var(--rust-lt); }
+  .form-sub {
+    color: #A89E98;
+    font-size: 0.93rem;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  #lead-form {
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+  }
+  #lead-form input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1.5px solid #3A2E28;
+    background: #261E1A;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  #lead-form input::placeholder { color: #6A5850; }
+  #lead-form input:focus { border-color: var(--rust-lt); }
+  #lead-form button {
+    width: 100%;
+    padding: 16px;
+    background: var(--rust);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  #lead-form button:hover { background: var(--rust-lt); }
+  .privacy-note { color: #6A5850; font-size: 0.8rem; margin-top: 4px; position: relative; }
+
+  #thank-you {
+    display: none;
+    max-width: 480px;
+    margin: 0 auto;
+    background: #1C1410;
+    border: 1.5px solid var(--rust);
+    border-radius: 8px;
+    padding: 36px 28px;
+    position: relative;
+  }
+  #thank-you h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  #thank-you p {
+    color: #C8BEB8;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .download-btn {
+    display: inline-block;
+    background: var(--rust);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .download-btn:hover { background: var(--rust-lt); }
+
+  .footer {
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .footer a { color: var(--rust); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <span class="eyebrow">Free Guide &middot; Upskillwithmumma</span>
+  <h1>Phone Se <em>Pehla Kadam</em></h1>
+  <p class="hero-sub">How I started building income from home &mdash; with just a phone, zero investment, and a sleeping baby in the next room. Everything I actually did. Nothing made up.</p>
+  <button class="scroll-cta" onclick="document.getElementById('get-guide').scrollIntoView({behavior:'smooth'})">Get the Free Guide &rarr;</button>
+</section>
+
+<div class="strip">100% Free &nbsp;&middot;&nbsp; No investment required &nbsp;&middot;&nbsp; For Indian moms starting from zero</div>
+
+<section class="inside">
+  <p class="section-label">What's inside</p>
+  <h2>Everything I wish someone had put in one place when I started</h2>
+  <p>When I left my aviation career while pregnant, I had no plan. No roadmap. Just a phone, a WiFi connection, and the absolute need to not be financially dependent forever.</p>
+  <p>This guide is what I put together after months of figuring it out &mdash; the first steps, in the right order, for free.</p>
+  <ul class="checklist">
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span>How to set up your first income stream from your phone &mdash; no laptop needed to start</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span>The exact platforms I use &mdash; which are free, which actually work in India, which to ignore</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span>Amazon affiliate program basics &mdash; what it is, how to join, how to get your first link live</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span>How to start a blog for free and why it matters more than Instagram for long-term income</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span>What to do in your first 30 days &mdash; a simple action plan, not a 47-step framework</span>
+    </li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<section class="forwho">
+  <p class="section-label">This is for you if</p>
+  <h2>You are in one of these places right now</h2>
+  <div class="pain-cards">
+    <div class="pain-card">
+      <strong>You stopped earning when you became a mother</strong>
+      And now every small purchase feels like asking for permission. You want your own money back.
+    </div>
+    <div class="pain-card">
+      <strong>You have looked at ten &ldquo;earn from home&rdquo; videos and still don&rsquo;t know where to start</strong>
+      Because they all assume you have time, money, or a tech background. You have none of those. You have a phone and 40 minutes.
+    </div>
+    <div class="pain-card">
+      <strong>You want something real, not a get-rich promise</strong>
+      You are not looking for overnight income. You are looking for a first step that is honest and actually works.
+    </div>
+    <div class="pain-card">
+      <strong>You are an Indian mom and most of the content out there feels like it was written for someone else</strong>
+      It was. This wasn&rsquo;t.
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="get-guide">
+  <h2>Get <em>Phone Se Pehla Kadam</em> &mdash; Free</h2>
+  <p class="form-sub">Enter your name and email. The download link comes straight away.</p>
+  <form id="lead-form" onsubmit="handleSubmit(event)">
+    <input type="text" id="fname" name="name" placeholder="Your first name" required autocomplete="given-name">
+    <input type="email" id="femail" name="email" placeholder="Your email address" required autocomplete="email">
+    <button type="submit" id="submit-btn">Send Me the Free Guide &rarr;</button>
+    <p class="privacy-note">No spam. Ever. Unsubscribe any time.</p>
+  </form>
+  <div id="thank-you">
+    <h3>It&rsquo;s on its way &#10022;</h3>
+    <p>Thank you, <span id="ty-name"></span>. Your free guide is ready to download right now. Save it to your phone &mdash; and whenever you are ready to take your first step, everything you need is in there.</p>
+    <a class="download-btn" id="download-link" href="https://drive.google.com/file/d/1kiro9crqDg13t5lL0ALB7FRHP03WV9hv/view?usp=drive_link" target="_blank" rel="noopener">Download Phone Se Pehla Kadam &rarr;</a>
+    <p style="margin-top:20px; font-size:0.85rem; color:#C8BEB8;">
+      Come find me at <a href="https://upskillwithmumma.blogspot.com" style="color:var(--rust-lt);">upskillwithmumma.blogspot.com</a> &mdash; I write there every week.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2026 Upskillwithmumma &nbsp;&middot;&nbsp; <a href="https://upskillwithmumma.blogspot.com">Blog</a> &nbsp;&middot;&nbsp; Built with love from Mumbai</p>
+</footer>
+
+<script>
+  const PDF_LINK  = "https://drive.google.com/file/d/1kiro9crqDg13t5lL0ALB7FRHP03WV9hv/view?usp=drive_link";
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycby5FN6gNAP-0mVRJDH8EnMzTIQFrzLbqw9_JOoyIGZslUrbwUiEiSAaUHXjAirkbidQyA/exec";
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const name  = document.getElementById('fname').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const btn   = document.getElementById('submit-btn');
+
+    btn.textContent = 'Just a moment...';
+    btn.disabled = true;
+
+    document.getElementById('download-link').href = PDF_LINK;
+
+    try {
+      await fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          date: new Date().toISOString(),
+          source: 'Phone Se Pehla Kadam Landing Page'
+        })
+      });
+    } catch(err) {
+      // silent fail - person still gets PDF even if sheet save fails
+    }
+
+    document.getElementById('ty-name').textContent = name.split(' ')[0];
+    document.getElementById('lead-form').style.display = 'none';
+    document.querySelector('.form-sub').style.display = 'none';
+    document.querySelector('.form-section h2').style.display = 'none';
+    document.getElementById('thank-you').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
